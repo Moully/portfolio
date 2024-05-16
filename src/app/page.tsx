@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 
 export default function Home() {
@@ -42,17 +43,17 @@ export default function Home() {
   }, [handleMouseDown, handleMouseMove, handleMouseUp]);
 
   return (
-    <main className="h-screen w-screen bg-black m-auto relative overflow-hidden">
+    <main className="h-screen w-screen bg-black m-auto relative overflow-hidden fixed">
       <div
         className="flex gap-[4vmin] w-[300%] h-[100%] absolute left-[50%] items-center relative select-none"
         style={{ transform: `translate(${translate}%, 0)`}}
       >
-        <img className="image w-[40vmin] h-[50vmin] object-cover transition-transform" src="/main/pic1.jpg" alt="pic1" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
-        <img className="image w-[40vmin] h-[50vmin] object-cover" src="/main/pic7.jpg" alt="pic7" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
-        <img className="image w-[40vmin] h-[50vmin] object-cover" src="/main/pic8.jpg" alt="pic8" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
-        <img className="image w-[40vmin] h-[50vmin] object-cover" src="/main/pic4.jpg" alt="pic4" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
-        <img className="image w-[40vmin] h-[50vmin] object-cover" src="/main/pic5.jpg" alt="pic5" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
-        <img className="image w-[40vmin] h-[50vmin] object-cover" src="/main/pic6.jpg" alt="pic6" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic1.jpg" alt="pic1" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic7.jpg" alt="pic7" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic8.jpg" alt="pic8" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic4.jpg" alt="pic4" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic5.jpg" alt="pic5" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+        <Image width={1000} height={800} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic6.jpg" alt="pic6" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
       </div>
     </main>
   );
