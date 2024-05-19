@@ -1,0 +1,8 @@
+.imageContainer{
+}
+.images{
+    width: 40vmin;
+    height: 70vmin;
+    object-fit: cover;
+    object-position: 0, center;
+}
