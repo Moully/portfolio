@@ -57,6 +57,9 @@ export default function Home() {
         >
           <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic1.jpg" alt="pic1" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
           <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic7.jpg" alt="pic7" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+          <Link href="https://ecommercenmtesting.vercel.app/" target="_blank" className="select-none">
+            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/ecommerce.png" alt="ecommerce" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
+          </Link>
           <Link href={"/parallax"} className="select-none">
             <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/parallax.png" alt="parallax" draggable="false" style={{objectPosition:`${-2*translate}% 50%`}} />
           </Link>
