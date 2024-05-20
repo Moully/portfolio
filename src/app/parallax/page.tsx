@@ -10,6 +10,7 @@ export default function Parallax() {
     const [xValue, setXValue] = useState(0);
     const [yValue, setYValue] = useState(0);
     const [zValue, setZValue] = useState(0);
+    const [perspective, setPerspective] = useState(0);
     const [rotateDegree, setRotateDegree] = useState(0)
 
     useEffect(() => {
@@ -17,6 +18,7 @@ export default function Parallax() {
             setXValue(e.clientX - window.innerWidth / 2);
             setYValue(e.clientY - window.innerHeight / 2);
             setRotateDegree(xValue/ (window.innerWidth /2))
+            setPerspective(window.innerWidth * 0.2)
         };
 
         window.addEventListener("mousemove", handleMouseMove);
@@ -37,7 +39,7 @@ export default function Parallax() {
             const z = (xValue - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
             setZValue(z);
 
-            el.style.transform = `rotateY(${rotateDegree * rotateSpeed}deg) translateX(calc(-50% + ${xValue * speedX}px)) translateY(calc(-50% + ${yValue * speedY}px)) perspective(2000px) translateZ(${440 + z * speedZ}px)`;
+            el.style.transform = `rotateY(${rotateDegree * rotateSpeed}deg) translateX(calc(-50% + ${xValue * speedX}px)) translateY(calc(-50% + ${yValue * speedY}px)) perspective(${perspective * 4}px) translateZ(${perspective + z * speedZ}px)`;
         });
     }, [xValue, yValue, zValue]);
 
