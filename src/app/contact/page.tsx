@@ -7,7 +7,7 @@ export default function Contact() {
 
   return (
     <main className="relative">
-        
+        <p>working on this</p>
     </main>
   );
 }
