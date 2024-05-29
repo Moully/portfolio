@@ -51,7 +51,7 @@ export function Parallax() {
                 <p>Services</p>
                 <p>Book travel</p>
                 <p>About Us</p>
-                <Link href={`/`}> <p className="border-2 p-[4px] rounded-md">Back to Home</p> </Link>
+                <Link href={`/parallax`} target="_blank"> <p className="border-2 p-[4px] rounded-md">Go to paralax</p> </Link>
             </div>
         </div>
         <div ref={parallaxRef} className="h-[100vh] w-[100vw] bg-black overflow-hidden relative border-2">
