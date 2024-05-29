@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-export default function Parallax() {
+export function Parallax() {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const parallaxElements = Array.from(parallaxRef.current?.getElementsByClassName(styles.parallax) || []) as HTMLElement[];
     const [xValue, setXValue] = useState(0);
@@ -41,7 +41,7 @@ export default function Parallax() {
 
             el.style.transform = `rotateY(${rotateDegree * rotateSpeed}deg) translateX(calc(-50% + ${xValue * speedX}px)) translateY(calc(-50% + ${yValue * speedY}px)) perspective(${perspective * 4}px) translateZ(${perspective + z * speedZ}px)`;
         });
-    }, [xValue, yValue, zValue]);
+    }, [parallaxElements, perspective, rotateDegree, xValue, yValue, zValue]);
 
     return (
         <main className="relative">
@@ -82,4 +82,10 @@ export default function Parallax() {
         </div>
         </main>
     );
+}
+
+export default function ParallaxEffect(){
+    return(
+        Parallax()
+    )
 }

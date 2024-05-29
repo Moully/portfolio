@@ -53,14 +53,32 @@ export default function Home() {
     storedMousePosition.current = translate;
   }, [translate]);
 
-  useEffect(() => {
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+  const handleWheel = useCallback((e: WheelEvent) => {
+    setTranslate(prevTranslate => {
+      const increment = e.deltaY > 0 ? -2 : 2; 
+      const nextTranslate = prevTranslate + increment;
+      if (nextTranslate > 0 || nextTranslate < -50) return prevTranslate;
+      storedMousePosition.current = nextTranslate;
+      return nextTranslate;
+    });
+  }, []);
 
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
+  useEffect(() => {
+    const addMouseListeners = () => {
+      window.addEventListener("mousedown", handleMouseDown);
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    };
+
+    const addTouchListeners = () => {
+      window.addEventListener("touchstart", handleTouchStart);
+      window.addEventListener("touchmove", handleTouchMove);
+      window.addEventListener("touchend", handleTouchEnd);
+    };
+
+    addMouseListeners();
+    addTouchListeners();
+    window.addEventListener("wheel", handleWheel);
 
     return () => {
       window.removeEventListener("mousedown", handleMouseDown);
@@ -70,8 +88,10 @@ export default function Home() {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
+
+      window.removeEventListener("wheel", handleWheel);
     };
-  }, [handleMouseDown, handleMouseMove, handleMouseUp, handleTouchStart, handleTouchMove, handleTouchEnd]);
+  }, [handleMouseDown, handleMouseMove, handleMouseUp, handleTouchStart, handleTouchMove, handleTouchEnd, handleWheel]);
 
   return (
     <main className="relative">
@@ -82,21 +102,21 @@ export default function Home() {
       <div className="h-screen w-screen bg-black m-auto relative overflow-hidden fixed">
         <div
           className="flex gap-[4vmin] w-[300%] h-[100%] absolute left-[50%] items-center relative select-none"
-          style={{ transform: `translate(${translate}%, 0)` }}
+          style={{ transform: `translate(${translate}%, 0)`, transition: 'transform 1.8s ease-out' }}
         >
-          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic1.jpg" alt="pic1" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
+          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic1.jpg" alt="pic1" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
           <Link href="https://blognm.vercel.app/" target="_blank">
-            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/blogmain.png" alt="blogmain" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
+            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/blogmain.png" alt="blogmain" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
           </Link>
           <Link href="https://ecommercenmtesting.vercel.app/" target="_blank" className="select-none">
-            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/ecommerce.png" alt="ecommerce" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
+            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/ecommerce.png" alt="ecommerce" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
           </Link>
           <Link href="/parallax" className="select-none">
-            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/parallax.png" alt="parallax" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
+            <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/parallax.png" alt="parallax" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
           </Link>
-          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic4.jpg" alt="pic4" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
-          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic5.jpg" alt="pic5" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
-          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic6.jpg" alt="pic6" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%` }} />
+          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic4.jpg" alt="pic4" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
+          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic5.jpg" alt="pic5" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
+          <Image width={1600} height={1600} className="image w-[40vmin] h-[70vmin] object-cover" src="/main/pic6.jpg" alt="pic6" draggable="false" style={{ objectPosition: `${-2 * translate}% 50%`, transition: 'object-position 1.8s ease-out' }} />
         </div>
       </div>
     </main>
