@@ -86,6 +86,6 @@ export function Parallax() {
 
 export default function ParallaxEffect(){
     return(
-        Parallax()
+        <Parallax/>
     )
 }

@@ -17,13 +17,13 @@ export default function Contact() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, debitis nihil optio doloremque ipsum expedita molestias officia reprehenderit? Nesciunt incidunt maiores hic ratione illo a quae dolorem animi cupiditate ipsam sed ducimus vero autem accusantium voluptatum sunt ipsum, dolorum iste. Magni corporis illo quas hic accusantium aspernatur dolore sunt aut?</p>
           </div>
           <div className="h-[50vh] w-[50%] overflow-hidden">
-            {Parallax()}
+            <Parallax/>
           </div>
         </div>
       </div>
 		},
 		{
-			title: 'Services',
+			title: 'Leaving Services',
 			value: 'services',
 			content:
       <div className="w-full overflow-hidden relative h-full rounded-2xl px-[30px] py-[20px] text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900"> 
