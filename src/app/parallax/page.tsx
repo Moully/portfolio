@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-export function Parallax() {
+export default function Parallax() {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const parallaxElements = Array.from(parallaxRef.current?.getElementsByClassName(styles.parallax) || []) as HTMLElement[];
     const [xValue, setXValue] = useState(0);
@@ -82,10 +82,4 @@ export function Parallax() {
         </div>
         </main>
     );
-}
-
-export default function ParallaxEffect(){
-    return(
-        <Parallax/>
-    )
 }

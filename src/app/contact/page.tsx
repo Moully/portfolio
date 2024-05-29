@@ -1,5 +1,5 @@
 "use client";
-import {Parallax} from "../parallax/page";
+import Parallax from "../parallax/page";
 import { Tabs } from "../util/tabs";
 
 
