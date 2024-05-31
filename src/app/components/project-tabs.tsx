@@ -8,6 +8,33 @@ import dynamic from 'next/dynamic'
 export const ProjectTabs = ()=>{
   const ParallaxNoSSR = dynamic(() => import('../parallax/page'), { ssr: false })
   const tabs = [
+    {
+			title: 'Leaving Services',
+			value: 'services',
+			content:
+      <div className="w-full font-sans overflow-auto relative h-[80vh] rounded-2xl px-[30px] py-[20px] text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-800 to-gray-950 select-none">
+        <h2>Leaving Request Service</h2>
+        <div className="flex flex-col mt-[10px] ">
+          <div className="w-[100%] mt-[20px]">
+            <Link href={`https://intern-hrms-dashboard-prod-pinecone-studio.vercel.app/leaving`} target="_blank">
+              <Image width={1600} height={1600} src="/leavingService/leavingservice.png" alt="pic1"/>
+            </Link>
+          </div>
+          <div className="flex flex-col gap-[20px] w-[100%] text-[14px]">
+            <p>Ажилтан гэнтийн ажил гараад ажилдаа очиж чадахгүй үедээ хэн нэгэнд утсаар голчлон мэдэгддэг билээ. Гэхдээ заримдаа ажил дундаа сатааран таны чөлөөний хүсэлтийг бүртгэхээ мартах эсхүл дараа нөхөж бүртгэхдээ буруу хугацаагаар бүртгэх гэх мэт асуудлууд олонтоо гардаг. Харин энэхүү програмыг ашиглан бүх асуудлаа шийдэх боломжтой</p>
+            <ul className="list-disc">
+              <li>Хаанаас ч чөлөөний хүсэлтийг үүсгэх эрх чөлөө</li>
+              <li>Чөлөөний хүсэлтийг хэнээр батлуулахаа сонгох (Шууд удирдлага эсхүл Хүний нөөцийн ажилтан)</li>
+              <li>Цагаар эсхүл олон хоногоор чөлөөний хүсэлтээ үүсгэх сонголт</li>
+              <li>Өмнөх чөлөөний хүсэлтийн түүхийг харах</li>
+              <li>Ажилтаны нийт чөлөөтэй байсан цагыг харах</li>
+              <li>Нийт чөлөөний ажилтануудыг календар дээр харах</li>
+            </ul>
+            <p>DEVELOPER NOTE: LOGIN REQUERED</p>
+          </div>
+        </div>
+      </div>
+      },
 		{
 			title: 'Parallax HomePage Effect',
 			value: 'parallax',
@@ -36,33 +63,6 @@ export const ProjectTabs = ()=>{
         </div>
       </div>
 		},
-		{
-			title: 'Leaving Services',
-			value: 'services',
-			content:
-      <div className="w-full font-sans overflow-auto relative h-[80vh] rounded-2xl px-[30px] py-[20px] text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-800 to-gray-950 select-none">
-        <h2>Parallax Landing HomePage Effect</h2>
-        <div className="flex flex-col mt-[10px] ">
-          <div className="w-[100%] mt-[20px]">
-            <Link href={`https://intern-hrms-dashboard-prod-pinecone-studio.vercel.app/leaving`} target="_blank">
-              <Image width={1600} height={1600} src="/leavingService/leavingservice.png" alt="pic1"/>
-            </Link>
-          </div>
-          <div className="flex flex-col gap-[20px] w-[100%] text-[14px]">
-            <p>Ажилтан гэнтийн ажил гараад ажилдаа очиж чадахгүй үедээ хэн нэгэнд утсаар голчлон мэдэгддэг билээ. Гэхдээ заримдаа ажил дундаа сатааран таны чөлөөний хүсэлтийг бүртгэхээ мартах эсхүл дараа нөхөж бүртгэхдээ буруу хугацаагаар бүртгэх гэх мэт асуудлууд олонтоо гардаг. Харин энэхүү програмыг ашиглан бүх асуудлаа шийдэх боломжтой</p>
-            <ul className="list-disc">
-              <li>Хаанаас ч чөлөөний хүсэлтийг үүсгэх эрх чөлөө</li>
-              <li>Чөлөөний хүсэлтийг хэнээр батлуулахаа сонгох (Шууд удирдлага эсхүл Хүний нөөцийн ажилтан)</li>
-              <li>Цагаар эсхүл олон хоногоор чөлөөний хүсэлтээ үүсгэх сонголт</li>
-              <li>Өмнөх чөлөөний хүсэлтийн түүхийг харах</li>
-              <li>Ажилтаны нийт чөлөөтэй байсан цагыг харах</li>
-              <li>Нийт чөлөөний ажилтануудыг календар дээр харах</li>
-            </ul>
-            <p>DEVELOPER NOTE: LOGIN REQUERED</p>
-          </div>
-        </div>
-      </div>
-      },
 		{
       title: 'Blog',
 			value: 'blog',
