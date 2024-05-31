@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 
 export default function Parallax() {
     const parallaxRef = useRef<HTMLDivElement>(null);

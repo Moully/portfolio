@@ -1,5 +1,4 @@
 "use client"
-import { createContext} from "react";
 import { ProjectTabs } from "./components/project-tabs";
 import { Skills } from "./components/skills";
 import { Getintouch } from "./components/getintouch";
@@ -7,7 +6,6 @@ import { Navbar } from "./components/navbar";
 import { AboutMe } from "./components/aboutme";
 import { InfiniteMovingCardsDemo } from "./components/testimonial";
 
-export const darkTheme = createContext(null)
 export default function Home() {
   return (
     <main className="flex flex-col m-auto max-w-screen-xl items-center relative text-white">
