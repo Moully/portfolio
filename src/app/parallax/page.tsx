@@ -46,12 +46,12 @@ export default function Parallax() {
     return (
         <main className="relative">
         <div className="flex w-[100%] justify-between items-center p-[20px] z-[110] absolute left-0 top-0 text-white select-none">
-            <h1 className="text-[24px]">China Travel</h1>
+            <h1 className="text-[16px]">China Travel</h1>
             <div className="flex gap-[20px] text-[16px] items-center">
                 <p>Services</p>
                 <p>Book travel</p>
                 <p>About Us</p>
-                <Link href={`/parallax`} target="_blank"> <p className="border-2 p-[4px] rounded-md">Go to paralax</p> </Link>
+                <p className="border-2 p-[4px] rounded-md">Go to paralax</p>
             </div>
         </div>
         <div ref={parallaxRef} className="h-[100vh] w-[100vw] bg-black overflow-hidden relative border-2">
